@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>492</string>
+	<key>AMApplicationVersion</key>
+	<string>2.10</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}		tell application "QuickTime Player"		if it is running then			if front document exists then				set ct to (current time of front document)				set dt to (duration of front document)				set mt to (ct as string) &amp; "/" &amp; (dt as string)				set the clipboard to mt				return mt			end if		end if	end tell		return inputend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>641377C0-F685-4418-9C85-F824DFE2DAA3</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>D3F7A178-76B1-4224-B959-F9085A8F644C</string>
+				<key>UUID</key>
+				<string>BF310756-8DE6-4142-8FD4-BAF59D9673E4</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>438.500000:368.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run JavaScript.action</string>
+				<key>ActionName</key>
+				<string>Run JavaScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>function run(inputs, params) {
+	try {
+		var input = inputs[0]
+		var parts = input.split("/")
+		var pt = Math.floor(Number(parts[0]))
+		var minute = 60
+		var hour = 60 * 60
+		var hours = Math.floor(pt / hour)
+		var minutes = Math.floor((pt - (hours * hour)) / minute)
+		var seconds = Math.floor(pt - (hours * hour) - (minutes * minute))
+		var ts = []
+		if ( hours ) ts.push(hours + "h")
+		if ( minutes ) ts.push(minutes + "m")
+		if ( seconds ) ts.push(seconds + "s")
+		return ts.join("") + " — "
+	}
+	catch (err) {
+		return ""
+	}}</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunJavaScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunJavaScriptAction</string>
+				<key>InputUUID</key>
+				<string>16A30703-7A48-42BB-AF5B-6DEF21C6ADEC</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+					<string>JavaScript</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>8E649F13-A832-4C4F-A38F-68BA6EB1C262</string>
+				<key>UUID</key>
+				<string>D5D59B5B-A44B-4162-8F9C-7216129E090B</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>function run(input, parameters) {
+	
+	// Your script goes here
+
+	return input;
+}</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>438.500000:665.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.attributed-string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.2.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>System</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict/>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.attributed-string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Copy to Clipboard.action</string>
+				<key>ActionName</key>
+				<string>Copy to Clipboard</string>
+				<key>ActionParameters</key>
+				<dict/>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.CopyToClipboard</string>
+				<key>CFBundleVersion</key>
+				<string>1.2.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMCopyToClipboardAction</string>
+				<key>InputUUID</key>
+				<string>4DC7B1C6-430F-497D-8EFB-0FED5D6D76D3</string>
+				<key>Keywords</key>
+				<array>
+					<string>Copy</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>0E6A3A0D-0C7D-44E4-8FFA-8309CBD92C1A</string>
+				<key>UUID</key>
+				<string>8DEA74FD-690F-4939-B428-0473098AE758</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>System</string>
+				</array>
+				<key>arguments</key>
+				<dict/>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>0DE6DCF9-A2D5-49C7-8D25-B07E48B1DD8B</key>
+		<dict>
+			<key>from</key>
+			<string>BF310756-8DE6-4142-8FD4-BAF59D9673E4 - BF310756-8DE6-4142-8FD4-BAF59D9673E4</string>
+			<key>to</key>
+			<string>D5D59B5B-A44B-4162-8F9C-7216129E090B - D5D59B5B-A44B-4162-8F9C-7216129E090B</string>
+		</dict>
+		<key>87F4DDEF-E538-4264-BABA-364DA10B1146</key>
+		<dict>
+			<key>from</key>
+			<string>D5D59B5B-A44B-4162-8F9C-7216129E090B - D5D59B5B-A44B-4162-8F9C-7216129E090B</string>
+			<key>to</key>
+			<string>8DEA74FD-690F-4939-B428-0473098AE758 - 8DEA74FD-690F-4939-B428-0473098AE758</string>
+		</dict>
+	</dict>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>applicationBundleIDsByPath</key>
+		<dict/>
+		<key>applicationPaths</key>
+		<array/>
+		<key>inputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>outputTypeIdentifier</key>
+		<string>com.apple.Automator.text</string>
+		<key>presentationMode</key>
+		<integer>11</integer>
+		<key>processesInput</key>
+		<integer>0</integer>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.text</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>systemImageName</key>
+		<string>NSActionTemplate</string>
+		<key>useAutomaticInputType</key>
+		<integer>1</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
